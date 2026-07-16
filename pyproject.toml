@@ -6,9 +6,13 @@ build-backend = "hatchling.build"
 
 [project] 
 name = "example_package_sergey" 
-version = "0.1.0" 
+dynamic = ["version"] 
 dependencies = ["numpy"]
 readme="README.md"
+
+[tool.hatch]
+version.path = "src/example_package_sergey/__init__.py"
+
 
 [project.optional-dependencies]
 test = ["pytest"]
