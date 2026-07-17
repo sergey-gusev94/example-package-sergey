@@ -6,8 +6,12 @@ jobs:
     steps:
       - name: Greeting!
         run: echo hello world
-  run-python-test:
+  run-python-tests:
+    name: Check Python ${{matrix.python-version}} on Ubuntu
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
     steps:
       - uses: actions/checkout@v3
 
